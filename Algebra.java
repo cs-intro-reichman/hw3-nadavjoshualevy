@@ -100,19 +100,45 @@ public class Algebra {
 
 			count++;}
 			if (x2 == x1) {count = 1;}
+			if (x1>0 && 0>x2) {
+				temp = times(-1, x2);
+				while (temp <= x1) {
+				temp =	plus(temp, x2);
+
+				count++;}
+				count = times(count, -1);
+			}
+			if (x1<0 && 0<x2) {
+				x1 = times(-1, x1);
+				while (temp <= x1) {
+				temp =	plus(temp, x2);
+
+				count++;}
+				count = times(count, -1);
+			}
 				
 		return count;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+	int divisionResult = div(x1, x2);
+    int amountToSubtract = times(divisionResult, x2);
+	int modulu = minus(x1, amountToSubtract);
+		return modulu;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
+		int sqrt = 0;
+		for (int i = 0;x>i;i++){
+			times(i, i);
+			if (times(i, i) == x) {
+				sqrt = i;
+				
+			}
+			if (x == 1){sqrt=1;}
+		}
+		return sqrt;
 	}	  	  
 }
