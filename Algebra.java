@@ -25,32 +25,74 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		
+		for (int i = 0; x2>i; i++){
+			x1++;
+		}
+		return x1;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		if (x2>0){
+		for (int i = 0; x2>i; i++){
+			x1--;
+		}
+	}
+	else if (x2<0) {
+		for (int i = 0; x2<i; i--){
+			x1++;
+		}
+		
+	}
+		return x1;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int temp = 0;
+		if (x2>0) {
+			
+		
+		for (int i = 0; x2>i; i++){
+		temp = plus(temp, x1);	
+
+		}
+	}
+		else if (0>x2){
+		for (int i = 0; x2<i; i--){
+		temp = minus(temp, x1);
+		}	
+		}
+
+		return temp;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int temp = x;
+		for (int i = 1; n>i; i++){
+		temp = times(temp, x);	
+		}
+
+		return temp;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		if (x2 == 0) {
+            System.err.println("Error: Cannot divide by zero.");
+            return 0;
+        }
+		int count = 0;
+		int temp = x2;
+		while (temp <= x1) {
+		temp =	plus(temp, x2);
+
+			count++;}
+			if (x2 == x1) {count = 1;}
+				
+		return count;
 	}
 
 	// Returns x1 % x2
