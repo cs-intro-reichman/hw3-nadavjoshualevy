@@ -1,6 +1,8 @@
 /** Functions for checking if a given string is an anagram. */
 public class Anagram {
 	public static void main(String args[]) {
+
+		
 		// Tests the isAnagram function.
 		System.out.println(isAnagram("silent","listen"));  // true
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
@@ -28,22 +30,53 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		// Replace the following statement with your code
-		return false;
+		preProcess(str1); preProcess(str2);
+		int sum1 = 0;
+		int sum2 = 0;
+		for (int i = 0; str1.length()>i;i ++){
+			char c = str1.charAt(i);
+			int newValue = (int) c;
+			sum1 += newValue;
+		}
+		for (int j = 0 ; str2.length()>j; j++){
+			char d = str2.charAt(j);
+			int newvalue2 = (int) d ; 
+			sum2 += newvalue2;
+		}
+		if (sum1 == sum2){return true;}
+		else return false;
 	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
-		// Replace the following statement with your code
-		return "";
+		String mod = "";
+		for (int i = 0; str.length()>i; i++){
+			char c = str.charAt(i);
+			if (c >= 'A' && c<= 'Z'){
+				mod += c ;
+			}
+			if (c >= 'a' && c<= 'z') {
+				mod += c ;
+			}
+		}
+			
+		return mod.toLowerCase();
 	} 
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return "";
+		int length = str.length();
+		String anagram = "";
+		for (int i=0; i<length; i++){
+			int randomIndex = (int)(Math.random()*str.length());
+			char rnd = str.charAt(randomIndex);
+			anagram = anagram +rnd;
+			str = str.substring(0, randomIndex) + str.substring(randomIndex +1);
+		}
+		return anagram;
+		
 	}
 }
