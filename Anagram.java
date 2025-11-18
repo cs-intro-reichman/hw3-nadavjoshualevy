@@ -30,15 +30,16 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		preProcess(str1); preProcess(str2);
+		String word1 = preProcess(str1);
+		String word2 = preProcess(str2);
 		int sum1 = 0;
 		int sum2 = 0;
-		for (int i = 0; str1.length()>i;i ++){
+		for (int i = 0; word1.length()>i;i ++){
 			char c = str1.charAt(i);
 			int newValue = (int) c;
 			sum1 += newValue;
 		}
-		for (int j = 0 ; str2.length()>j; j++){
+		for (int j = 0 ; word2.length()>j; j++){
 			char d = str2.charAt(j);
 			int newvalue2 = (int) d ; 
 			sum2 += newvalue2;
