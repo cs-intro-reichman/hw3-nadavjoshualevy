@@ -35,12 +35,12 @@ public class Anagram {
 		int sum1 = 0;
 		int sum2 = 0;
 		for (int i = 0; word1.length()>i;i ++){
-			char c = str1.charAt(i);
+			char c = word1.charAt(i);
 			int newValue = (int) c;
 			sum1 += newValue;
 		}
 		for (int j = 0 ; word2.length()>j; j++){
-			char d = str2.charAt(j);
+			char d = word2.charAt(j);
 			int newvalue2 = (int) d ; 
 			sum2 += newvalue2;
 		}
