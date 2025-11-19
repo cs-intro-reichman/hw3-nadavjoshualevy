@@ -130,15 +130,16 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		int sqrt = 0;
-		for (int i = 0;x>i;i++){
-			times(i, i);
-			if (times(i, i) == x) {
-				sqrt = i;
-				
+		int g = 1;
+		if (x==0){     // exception for 0
+			return 0;
+		} else if (x<0){ // exception for negatives
+			return -1;
+		} else {
+			while (times(g, g)<=x){
+				g = plus(g, 1);
 			}
-			if (x == 1){sqrt=1;}
 		}
-		return sqrt;
+		return minus(g, 1);
 	}	  	  
 }
